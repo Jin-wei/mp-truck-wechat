@@ -368,7 +368,10 @@ if (queryData.state === 'STATE' && queryData.code) {
 //     const {tag, ...auth} = queryData;
 //     console.log('from user register tag:', tag, 'auth:', auth);
 //     getWeChatInfoByAuth(auth).then();
-} else if (path.indexOf('quick-search') >= 0) {
+} else if( queryData.tag === 'debug'){
+  //http://localhost:8080/?tag=debug
+  debugMode();
+}else if (path.indexOf('quick-search') >= 0) {
     addDataModule(store);
     store.commit('setUserData', {user: {}});
     initVueMain();
